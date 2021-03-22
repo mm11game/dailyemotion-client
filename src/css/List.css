@@ -1,0 +1,36 @@
+.btn-month, .reset{
+  width:100px;
+  background-color: palevioletred;
+  border: none;
+  border-radius: 50px;
+  color:#fff;
+  padding: 15px 0;
+  /* text-align: center; */
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.list-months{
+  list-style: none;
+  color: gray;
+}
+
+.reset{
+  width: 55px;
+  background-color: lightskyblue;
+  margin-left: 35px;
+}
+
+
+.list-months {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+.month {
+  padding-left: 10px;
+}

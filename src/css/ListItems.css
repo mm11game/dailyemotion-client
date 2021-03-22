@@ -1,6 +1,3 @@
-
-
-/* ListPage */
 .list-item-body {
   padding: 1rem;
   margin:2rem;
@@ -11,9 +8,11 @@
   border: solid rgb(238, 238, 238) 0.2rem;
   border-radius: 40px;
   display: flex;
-  max-width: 800px;
+  max-width: 600px;
   min-width: 500px;
 }
+
+
 
 .list-item-body:hover{
   background-color: rgba(247, 247, 247, 0.836);
@@ -33,41 +32,28 @@
   border-radius: 70%;
 }
 
-.month-btn, .week-btn {
-  width:100px;
-  background-color: rgb(43, 41, 41);
-  border: none;
-  border-radius: 50px;
-  color:#fff;
-  padding: 15px 0;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  margin: 10px;
-  cursor: pointer;
+.list-item-text {
+  word-break: normal;
+  color: grey;
+  margin-top: 15px;
 }
 
-.list-item-delete,
-.list-item-edit  {
-  float: right;
+.list-item-date {
+  color: grey;
+}
+.btn-delete,
+.btn-edit  {
   width: 40px;
   min-width: 5px;
   height: 40px;
   border-radius: 100%;
   background-color: lightpink;
   border: lightpink;
-  margin: 10px;
+  margin-left: 400px;
+  cursor: pointer;
+  position: relative;
+  vertical-align:initial; 
+
 }
-
-
-/* .oauth {
-  float:none;
-  position:static;
-  display:block;
-  margin: auto;
-  width:max-content;
-} */
-
 
 
