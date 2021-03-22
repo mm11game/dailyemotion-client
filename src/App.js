@@ -85,13 +85,20 @@ import axios from "axios";
 import Validation from "./components/Validation";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import Mainpage from "./components/Mainpage";
 import List from "./components/List";
-import Modified from "./components/Modified";
 import EmailLogin from "./components/EmailLogin";
 import Footer from "./components/Footer";
 
+
+export const AppContext = createContext()
+
 function App() {
+
+const [items, setItems] = useState(initialState.items);
+const removeItem = (itemId) => {
+    setItems(items.filter(el => el.id !== itemId))
+  }
+
   const userInfo = {
     // name: "brandon",
     email: "test@gmail.com",
@@ -125,18 +132,20 @@ function App() {
     setUser({ email: "", password: "" });
   };
 
+const removeValue = useMemo(() => ({items, removeItem}), [removeItem])
+
+
   return (
+    <AppContext.Provider value={removeValue}>
     <div className="app">
       <Router>
         <Navbar />
-
         <Switch>
           <Route path="/emaillogin" component={EmailLogin} exact>
             <EmailLogin />
           </Route>
-
-          <Route path="/mainpage" component={Mainpage} exact>
-            <Mainpage />
+          <Route path="/mainpage" component={MainPage} exact>
+            <MainPage />
           </Route>
          <Route path="/signup" component={EmailSignUp} />
         <Route path="/login" component={LandingPage} />
@@ -162,6 +171,7 @@ function App() {
       )}
       <Footer />
     </div>
+    </AppContext.Provider>
   );
 }
 export default App;
