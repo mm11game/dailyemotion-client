@@ -30,6 +30,7 @@
   width:inherit;
   object-fit: cover;
   border-radius: 70%;
+  margin-bottom: 30px;
 }
 
 .list-item-text {
@@ -49,7 +50,7 @@
   border-radius: 100%;
   background-color: lightpink;
   border: lightpink;
-  margin-left: 400px;
+  margin-left: 350px;
   cursor: pointer;
   position: relative;
   vertical-align:initial; 
