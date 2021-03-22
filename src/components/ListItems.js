@@ -2,7 +2,6 @@ import React from 'react';
 import '../css/ListItems.css';
 import RenderImg from './RenderImg';
 
-
 export default function ListItems({ item, handleDelete }) {
     return (
         <li className="list-item-body">
@@ -15,10 +14,10 @@ export default function ListItems({ item, handleDelete }) {
 
                 <div className="list-item-text">{item.text_content}</div>
             </div>
-        
+
             {/* <button className="btn-delete" onClick={() => { handleDelete(item.id) }}>삭제</button> */}
             {/* <button className="btn-edit">편집</button> */}
-    </li>    
+    </li>
     )
 }
 
