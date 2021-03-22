@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+/* .input,
+button {
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none; */
+/* } */
+form {
+  display: block;
+  /* position: relative; */
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 450px;
+  height: 550px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  padding: 20px;
+  box-shadow: 0px 0px 5px 1px rgb(130, 130, 130);
+}
+
+form .form-inner h2 {
+  color: #888;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+form .form-inner .form-group {
+  display: block;
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+.form-inner .form-group label {
+  display: block;
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 6px;
+  transition: 0.4s;
+}
+
+.form-inner .form-group:focus-within label {
+  color: #fe4880;
+}
+
+.email {
+  font-size: 20px;
+}
+
+.password {
+  font-size: 20px;
+}
+
+form .form-inner .form-group input {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+form .form-inner .form-group input:focus {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+form .form-inner input[type="submit"] {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: pink;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 40px;
+}
