@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+.footer {
+  background: black;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1rem;
+  margin: 0px;
+  padding: 0px;
+}
