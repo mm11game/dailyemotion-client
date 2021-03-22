@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  background: black;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1rem;
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar-logo {
+  color: white;
+  margin-left: 40px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.navbar-logo:hover {
+  background-color: #1888ff;
+  border-radius: 4px;
+  padding: 6px;
+  transition: all 0.2s ease-out;
+}
+
+.navbar-links {
+  color: white;
+  /* margin-left: 24px; */
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+  align-items: center;
+  list-style: none;
+  font-size: 1rem;
+}
+
+.navbar-mainpage-button,
+.navbar-list-button,
+.navbar-modified-button,
+.navbar-login-button {
+  color: white;
+  border-radius: 6px;
+  margin-left: 24px;
+  cursor: pointer;
+  list-style: none;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.navbar-login-button {
+  color: white;
+  border-radius: 6px;
+  margin-left: 40px;
+  cursor: pointer;
+  list-style: none;
+  justify-content: right;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.navbar-login-button:hover {
+  background-color: #1888ff;
+  border-radius: 4px;
+  padding: 6px;
+  transition: all 0.2s ease-out;
+}
+
+.navbar-modified-button:hover {
+  background-color: #1888ff;
+  border-radius: 4px;
+  padding: 6px;
+  transition: all 0.2s ease-out;
+}
+
+.navbar-list-button:hover {
+  background-color: #1888ff;
+  border-radius: 4px;
+  padding: 6px;
+  transition: all 0.2s ease-out;
+}
+
+.navbar-mainpage-button:hover {
+  background-color: #1888ff;
+  border-radius: 4px;
+  padding: 6px;
+  transition: all 0.2s ease-out;
+}
+
+.mobile-menu-icon {
+  display: none;
+}
+@media screen and (max-width: 700px) {
+  .Log {
+    display: flex;
+    position: absolute;
+    top: 16px;
+    left: 34px;
+  }
+  .navbar-links {
+    display: none;
+    text-decoration: none;
+  }
+
+  .navbar-links:hover {
+    background-color: #1888ff;
+    border-radius: 4px;
+    padding: 6px;
+    transition: all 0.2s ease-out;
+  }
+
+  .navbar-links-mobile {
+    position: absolute;
+    display: block;
+    list-style: none;
+    background-color: black;
+    left: 0;
+    top: 76px;
+    transition: 0.5s ease-out;
+    width: 100%;
+  }
+  .navbar-links-mobile:hover {
+    background-color: #1888ff;
+    border-radius: 4px;
+    padding: 6px;
+    transition: all 0.2s ease-out;
+  }
+
+  .navbar-mainpage-button,
+  .navbar-list-button,
+  .navbar-modified-button,
+  .navbar-login-button {
+    color: white;
+    text-align: center;
+    padding: 32px;
+    width: 100%;
+    transition: all 0.5s ease;
+  }
+  .navbar-login-button:hover {
+    background-color: #1888ff;
+    border-radius: 4px;
+    padding: 6px;
+    transition: all 0.2s ease-out;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    color: #fff;
+    background-color: black;
+    border: none;
+    outline: none;
+    right: 24px;
+  }
+}
