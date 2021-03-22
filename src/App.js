@@ -28,13 +28,12 @@
 // // const [deletedItems, setDeletedItems] = useState("")
 
 // // const goToGarbage = (itemId) => {
-// //   setDeletedItem(items.filter(el => el.id === itemId))  
+// //   setDeletedItem(items.filter(el => el.id === itemId))
 // // }
 
 // // const deletedItem =(itemId) => {
 // //   setItems(items.filter(el => el.id === itemId))
 // // }
-
 
 // // useEffect (()=> {
 // //   axios
@@ -47,7 +46,6 @@
 // //      setDeletedItems(res.data.emotionlist_id)
 // //    })
 // // }, [setDeletedItems])
-
 
 // const removeValue = useMemo(() => ({items, removeItem}), [removeItem])
 
@@ -66,13 +64,6 @@
 //     </AppContext.Provider>
 //   )
 
-
-import "./App.css";
-import MainPage from "./components/MainPage";
-import Modified from "./components/Modified";
-import Delete from "./components/Delete";
-import EmailSignUp from './components/EmailSignUp';
-import LandingPage from './components/LandingPage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -80,12 +71,15 @@ import {
   Redirect,
   withRouter,
 } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext, useMemo } from "react";
 import axios from "axios";
-import Validation from "./components/Validation";
-import "./App.css";
+
 import Navbar from "./components/Navbar/Navbar";
-import Mainpage from "./components/Mainpage";
+import MainPage from "./components/MainPage";
+
+import Delete from "./components/Delete";
+import EmailSignUp from "./components/EmailSignUp";
+import LandingPage from "./components/LandingPage";
 import List from "./components/List";
 import Modified from "./components/Modified";
 import EmailLogin from "./components/EmailLogin";
@@ -129,41 +123,38 @@ function App() {
     <div className="app">
       <Router>
         <Navbar />
-
         <Switch>
           <Route path="/emaillogin" component={EmailLogin} exact>
             <EmailLogin />
           </Route>
 
-          <Route path="/mainpage" component={Mainpage} exact>
-            <Mainpage />
+          <Route path="/mainpage" component={MainPage} exact>
+            <MainPage />
           </Route>
-         <Route path="/signup" component={EmailSignUp} />
-        <Route path="/login" component={LandingPage} />
+
           <Route path="/list" component={List} exact>
             <List />
           </Route>
+
           <Route path="/modified" component={Modified} exact>
             <Modified />
           </Route>
-          <Redirect path="*" to="/login" />
+          {/* <Redirect path="*" to="/login" /> */}
         </Switch>
       </Router>
-      
-      {user.email != "" ? (
-        <div className="welcome">
-          <h2>
-            환영합니다.<span>{user.name}</span>
-          </h2>
-          <button onClick={Logout}>로그아웃</button>
-        </div>
-      ) : (
-        <EmailLogin Login={Login} error={error} />
-      )}
+
       <Footer />
     </div>
   );
 }
 export default App;
-
-
+// {user.email != "" ? (
+//   <div className="welcome">
+//     <h2>
+//       환영합니다.<span>{user.name}</span>
+//     </h2>
+//     <button onClick={Logout}>로그아웃</button>
+//   </div>
+// ) : (
+//   <EmailLogin Login={Login} error={error} />
+// )}
