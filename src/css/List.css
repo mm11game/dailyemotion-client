@@ -34,3 +34,9 @@
 .month {
   padding-left: 10px;
 }
+
+.fa-calendar-alt {
+  margin-left: 55px;
+  font-size:xx-large;
+  color:rgb(230, 146, 174);
+}
