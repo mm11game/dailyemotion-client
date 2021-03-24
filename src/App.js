@@ -20,13 +20,24 @@ import { initialState } from "../src/assets/state";
 axios.defaults.withCredentials = true;
 export const AppContext = createContext();
 export const garbageContext = createContext();
+// {id: 8, text_content: "undefined", emotionlist_id: 4, date: "2021-03-24", text_status: "0"
 
-function App(props) {
+function App() {
   const [items, setItems] = useState(initialState.items);
   const [deletedItems, setDeletedItems] = useState("");
   const [isLogin, setIsLogin] = useState(false);
   const [userInfo, setUserInfo] = useState([]);
   const history = useHistory();
+
+  // const result = axios
+  //   .get("https://localhost:5000/text/textList")
+  //   .then((res) => {
+  //     console.log("유즈이펙트로 가져온값", res.data.data);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
+
   // const [items, setItems] = useState(initialState.items);
 
   // const [editItem, setEditItem] = useState(null)
@@ -35,8 +46,8 @@ function App(props) {
   //   axios
   //     .get("https://localhost:5000/text/textList")
   //     .then((res) => {
-  //       console.log(res.data);
-  //       setItems(res.data);
+  //       console.log("유즈이펙트로 가져온값", res.data.data);
+  //       setItems(res.data.data);
   //     })
   //     .catch((err) => {
   //       console.log(err);
@@ -62,10 +73,9 @@ function App(props) {
     }
   };
   // const removeValue = useMemo(() => ({ items, removeItem }), [removeItem]);
-  const text = () => {
-    setIsLogin(true);
-  };
+
   const handleResponseSuccess = () => {
+    console.log("핸들리스폰스석세스가 작동함");
     axios
       .get("https://localhost:5000/user/")
       .then((res) => {
@@ -97,9 +107,13 @@ function App(props) {
         alert("로그아웃이 실패");
       });
   };
+  const getItemState = (item) => {
+    setItems(item);
+  };
+
   const removeValue = useMemo(() => ({ items, removeItem }), [removeItem]);
   return (
-    <AppContext.Provider value={removeValue}>
+    <AppContext.Provider value={items}>
       <Router>
         <Navbar
           handleResponseSuccess={handleResponseSuccess}
@@ -123,9 +137,13 @@ function App(props) {
             />
           </Route>
           <Route exact path="/mainpage" component={MainPage} />
-          <Route exact path="/list" component={List} />
+          <Route exact path="/list">
+            <List getItemState={getItemState} />
+          </Route>
           <Route exact path="/delete" component={Delete} />
-          <Route exact path="/modified" component={Modified} />
+          <Route exact path="/modified">
+            <Modified userInfo={userInfo} />
+          </Route>
           <Route
             exact
             path="/"
