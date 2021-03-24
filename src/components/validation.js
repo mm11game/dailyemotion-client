@@ -20,6 +20,10 @@ const validation = (values) => {
   if(values.confirmPassword !== values.password){
     errors.confirmPassword="비밀번호가 맞지 않습니다"
   } 
+
+  // if(values.confirmPassword !== values.password){
+  //    errors.confirmPassword="You entered an incorrect password"
+  // } 
   return errors;
 }
 

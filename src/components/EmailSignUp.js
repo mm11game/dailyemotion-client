@@ -111,6 +111,8 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import '../css/EmailSignUp.css'
 
+axios.defaults.withCredentials = true;
+
 export default function EmailSignUp() {
 
   const [values, setValues] = useState({
@@ -135,31 +137,37 @@ const history = useHistory();
 const handleSignup = (e) => {
   e.preventDefault(); 
   
-  const { nickName, email, password } = values;
+  const { nickName, email, password, confirmPassword } = values;
+
+  if(!email || !password || !nickName || !confirmPassword ) {
+    return alert("모든 항목은 필수입니다.")
+  }
 
   const res = 
     axios
-      .post("https://projectb1.com/user/signup", {
+      .post("https://test.projectb1.com:5000/user/signup", {
         nickName,
         email,
-        password
+        password,
+        confirmPassword
       },
       {
         headers: {
           'Content-Type':'application/json'
         },
       })
-      .then(res => {
+      .then(res=> {
         console.log(res)
-        if(res.status === 200) {
-          history.push("/main-page") 
+        if(res.status === 201) {
+          history.push("/mainpage") 
         }
       })
       .catch(err => {
-        console.log(err)
-        alert("가입 실패 - 관리자에게 문의하세요.")
-        history.push("/login")
-      })
+        console.log(err.response)
+        alert(err.response.data)
+        history.push("/login") 
+      }
+   )
 }
 
 
@@ -206,7 +214,11 @@ return (
           placeholder="비밀번호를 다시한번 입력해주세요"
           onChange={handleChange("confirmPassword")}
           />
+<<<<<<< HEAD
+          {errors.confirmPassword  && <p className="error">{errors.confirmPassword}</p>}
+=======
           {errors.confirmPassword && <p className="error-signup">{errors.confirmPassword}</p>}
+>>>>>>> 37125e1410f8d20a30eb5774a8ae1ae16231bb00
         </div>
         <div>
           <button className="btn-singup" onClick={handleSignup}>회원가입하기</button>

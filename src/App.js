@@ -25,10 +25,41 @@ function App() {
   const [deletedItems, setDeletedItems] = useState("");
   const [isLogin, setIsLogin] = useState(false);
   const [userInfo, setUserInfo] = useState([]);
-<<<<<<< HEAD
 
-=======
->>>>>>> 4494bca704cfabcfa00506f82e4a1dbb02528777
+// const [items, setItems] = useState(initialState.items);
+
+
+// const [editItem, setEditItem] = useState(null)
+
+useEffect(() => {
+  axios
+    .get("https://localhost:5000/text/textList")
+    .then((res) => {
+      console.log(res.data)
+      setItems(res.data)
+    })
+    .catch(err =>{
+      console.log(err)  
+    })
+})
+
+
+
+
+// const findItem = itemId => {
+//   const item = items.find(item => item.id === itemId)
+  
+//   setEditItem(item)
+// }
+
+
+
+const removeValue = useMemo(() => ({items, removeItem}), [removeItem])
+
+// const deletedItem = (itemId) => {
+//   setDeletedItems(items.filter(el => el.id === itemId))
+// }
+
   const history = useHistory();
   const removeItem = (itemId) => {
     if (items.id !== itemId) {
