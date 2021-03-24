@@ -7,10 +7,10 @@ import {
   Route,
   BrowserRouter as Router,
   Switch,
-  useHistory,
 } from "react-router-dom";
 import EmailSignUp from "./EmailSignUp";
 import "../css/LandingPage.css";
+import Slider from "./Slider";
 
 export default function LandingPage() {
   const [user, setUser] = useState(null);
@@ -44,8 +44,9 @@ export default function LandingPage() {
 
   return (
     <container>
-      <h1>감정을 기록하는 간편한 방법</h1>
+      <h1>💖 감정을 기록하는 간편한 방법</h1>
       <h5>이모지로 오늘 나만의 감정을 솔직하게 기록해보세요.</h5>
+      <Slider />
       <div className="signin-wrapper">
         <div>
           <GoogleLogin
@@ -66,9 +67,21 @@ export default function LandingPage() {
           <span>아직 계정이 없으신가요?</span>
           <span className="empty"></span>
           <span className="link-signup">
-            <Link to="/signup">회원가입하기</Link>
+            <Link to="/signup"> 👉 회원가입하기</Link>
           </span>
         </div>
+      </div>
+      <div>
+        <Link to="/emaillogin">
+          <button className="btn-signin-e">이메일로 시작하기</button>
+        </Link>
+      </div>
+      <div className="link">
+        <span>아직 계정이 없으신가요?</span>
+        <span className="empty"></span>
+        <span className="link-signup">
+          <Link to="/signup">회원가입하기</Link>
+        </span>
       </div>
     </container>
   );

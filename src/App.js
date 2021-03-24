@@ -18,16 +18,17 @@ import Delete from "./components/Delete";
 import axios from "axios";
 import { initialState } from "../src/assets/state";
 axios.defaults.withCredentials = true;
-
 export const AppContext = createContext();
 export const garbageContext = createContext();
-
 function App() {
   const [items, setItems] = useState(initialState.items);
   const [deletedItems, setDeletedItems] = useState("");
   const [isLogin, setIsLogin] = useState(false);
   const [userInfo, setUserInfo] = useState([]);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4494bca704cfabcfa00506f82e4a1dbb02528777
   const history = useHistory();
   const removeItem = (itemId) => {
     if (items.id !== itemId) {
@@ -38,7 +39,6 @@ function App() {
     }
   };
   const removeValue = useMemo(() => ({ items, removeItem }), [removeItem]);
-
   const text = () => {
     setIsLogin(true);
   };
@@ -73,7 +73,6 @@ function App() {
         alert("로그아웃이 실패");
       });
   };
-
   return (
     <AppContext.Provider value={removeValue}>
       <Router>
@@ -110,11 +109,4 @@ function App() {
     </AppContext.Provider>
   );
 }
-// path='/'
-//             render={() => {
-//               if (isLogin) {
-//                 return <Redirect to='/mypage' />;
-//               }
-//               return <Redirect to='/login' />;
-//             }}
 export default App;

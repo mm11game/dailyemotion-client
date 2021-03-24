@@ -32,38 +32,38 @@ function EmailLogin({ error, isLogin, handleResponseSuccess, text }) {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <div className="form-inner">
-        <h2>이메일로 시작하고 감정을 쉽게 기록해 보세요.</h2>
-        {error != "" ? <div className="error"></div> : ""}
-
-        <div className="form-group">
-          <label className="email">이메일</label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="이메일을 입력해주세요"
-            onChange={(e) => setDetails({ ...details, email: e.target.value })}
-          />
-        </div>
-
-        <div className="form-group">
-          <label className="password">비밀번호</label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="비밀번호를 입력해주세요"
-            onChange={(e) =>
-              setDetails({ ...details, password: e.target.value })
-            }
-          />
-        </div>
-        <input type="submit" value="로그인" />
+    <div className="container">
+      <div className="app-wrapper">
+      <div>
+        <h2 className="title"> 💖 이메일로 시작하고 감정을 쉽게 기록해 보세요.</h2>
       </div>
-    </form>
-  );
-}
+      <form onSubmit={submitHandler}>
+        <div className="email-form"> 📧 이메일
+          <input className="input" 
+          type="text" 
+          name="email" 
+          id="email" 
+          placeholder="이메일을 입력해주세요"
+          onChange={e => setDetails({...details, email: e.target.value})}
+          />
+          {/* {( error != "") ? (<div className="error"></div>) : "" } */}
+        </div>
+        <div className="password-form"> 🔐 비밀번호
+          <input className="input" 
+          type="text" 
+          name="email" 
+          id="email" 
+          placeholder="비밀번호를 입력해주세요"
+          onChange={e => setDetails({...details, password: e.target.value})}
+          />  
+          </div>
+        <div>
+          <button className="btn-singup" onClick={submitHandler}>시작하기</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  )
+};
 
 export default EmailLogin;
