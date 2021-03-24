@@ -104,8 +104,8 @@ import React, { useState, useEffect } from "react";
 import "../css/Modified.css";
 
 const axios = require("axios");
-axios.defaults.withCredentials = true;
 
+axios.defaults.withCredentials = true;
 const Modified = () => {
   //db에서 userinfo.nickname을 가져와서 9번 input테그에 넣는다
   //만약 수정하기 버튼을 눌럿을때, 위패스워드와, 아래패스워드가 다르면 catch
@@ -131,7 +131,7 @@ const Modified = () => {
       setErrMessage("빈칸을 모두 적어주세요.");
     } else if (changeNickname !== "" && password === passwordTwo) {
       axios
-        .post("https://projectb1.com/user/change", {
+        .post("https://test.projectb1.com:5000/user/change", {
           password: password,
           nickname: changeNickname,
         })

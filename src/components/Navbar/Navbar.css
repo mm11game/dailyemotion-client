@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 .navbar {
   background-color: black;
   opacity: 90%;
@@ -53,7 +49,6 @@
   line-height: 40px;
   margin-right: 1rem;
 }
-
 .nav-item:after {
   content: "";
   display: block;
@@ -62,12 +57,10 @@
   background: transparent;
   transition: width 0.7s ease, background-color 0.5s ease;
 }
-
 .nav-item:hover:after {
   width: 100%;
   background: #ffdd40;
 }
-
 .nav-item .active {
   color: #ffdd40;
   border: 1px solid #ffdd40;
@@ -89,7 +82,6 @@
     opacity: 1;
     transition: all 0.5s ease;
   }
-
   .nav-menu.active {
     background: black;
     left: 0px;
@@ -106,7 +98,6 @@
     width: 100%;
     display: table;
   }
-
   .nav-icon {
     display: block;
     position: absolute;
