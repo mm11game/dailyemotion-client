@@ -1,9 +1,10 @@
-.btn-month, .reset{
-  width:100px;
+.btn-month,
+.reset {
+  width: 100px;
   background-color: palevioletred;
   border: none;
   border-radius: 50px;
-  color:#fff;
+  color: #fff;
   padding: 15px 0;
   /* text-align: center; */
   text-decoration: none;
@@ -13,23 +14,21 @@
   cursor: pointer;
 }
 
-.list-months{
+.list-months {
   list-style: none;
   color: gray;
 }
 
-.reset{
+.reset {
   width: 55px;
   background-color: lightskyblue;
   margin-left: 35px;
 }
 
-
 .list-months {
   display: flex;
   flex-flow: row wrap;
 }
-
 
 .month {
   padding-left: 10px;
@@ -37,6 +36,6 @@
 
 .fa-calendar-alt {
   margin-left: 55px;
-  font-size:xx-large;
-  color:rgb(230, 146, 174);
+  font-size: xx-large;
+  color: rgb(230, 146, 174);
 }

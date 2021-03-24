@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 26px;
+}
+
+.slider {
+  width: 360px;
+  height: 200px;
+  background-color: white;
+  border-radius: 20%;
+}
+.sliderInner {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+}
+.sliderInner .left {
+  flex: 5%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: black;
+  cursor: pointer;
+}
+.sliderInner .center {
+  flex: 75%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.sliderInner .right {
+  flex: 5%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: black;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+  text-align-last: center;
+}
+.imgTitle {
+  font-size: 5rem;
+}
+.subtitle {
+  font-size: 2rem;
+}
+
+.fa-angle-right,
+.fa-angle-left {
+  font-size: 5rem;
+}
