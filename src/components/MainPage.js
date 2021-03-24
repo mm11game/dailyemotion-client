@@ -35,7 +35,7 @@ const MainPage = () => {
         textcontent: text,
         emotionId: clickEmoji,
       })
-      .then((data) => console.log("받은데이터", data));
+      .then((res) => console.log("받은데이터", res));
   };
 
   return (
