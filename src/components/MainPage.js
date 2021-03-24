@@ -31,11 +31,11 @@ const MainPage = () => {
     //클릭된 즉 이모지상태가 true인것의 id값과 여기 text값을 날려줘야한다.
     //만약 clickEmoji가 false가 아니고, text가 ""이 아닐때만 포스트를 해준다.
     axios
-      .post("https://projectb1.com/text/record", {
+      .post("https://test.projectb1.com:5000/text/textRecord", {
         textcontent: text,
         emotionId: clickEmoji,
       })
-      .then();
+      .then((res) => console.log("받은데이터", res));
   };
 
   return (

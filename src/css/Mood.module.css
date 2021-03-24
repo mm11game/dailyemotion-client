@@ -16,4 +16,6 @@
 .emojiImg {
   max-width: 70%;
   max-height: 70%;
+  object-fit: cover;
+  border-radius: 100%; 
 }
