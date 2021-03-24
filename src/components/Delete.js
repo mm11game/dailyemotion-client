@@ -30,7 +30,7 @@ const Delete = () => {
     setRenderEmojis(rendering);
     console.log("체크된 Emo", checkedEmo);
     //다 하고 나면? checkedEmo를 초기화시킨다
-    axios.post("https://projectb1.com/text/delete", {
+    axios.post("https://localhost:5000/text/finalDelete", {
       text_id: checkedEmo,
     });
     //마지막에 checkEmo를 []로 만들어준다

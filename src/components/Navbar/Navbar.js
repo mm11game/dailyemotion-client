@@ -1,56 +1,143 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import './Navbar.css'
+import React, { useState } from "react";
+<<<<<<< HEAD
+import { Link, useHistory } from "react-router-dom";
+import "./Navbar.css";
+function Navbar({ isLogin, userInfo, handleResponseSuccess, handleLogOut }) {
+  const [click, setClick] = useState(false);
+  //   const [navbar, setNavbar] = useState(false)
+  //   css position: sticky를 적용하면 navbar 상단 고정 가능
+  //   const changeBackground = () => {
+  //       if (window.scrollY >= 80) {
+  //           setNavbar(true);
+  //         } else {
+  //           setNavbar(false);
+  //         }
+  //     }
+  // window.addEventListener('scroll', changeBackground)
+  const handleClick = () => setClick(!click);
+  const history = useHistory();
+=======
+import { Link } from "react-router-dom";
+import "./Navbar.css"
 
 function Navbar() {
-    const [isMobile, setIsMobile] = useState(true);
-    const [navbar, setNavbar] = useState(true);
+  const [click, setClick] = useState(false);
 
-    const changeBackground = () => {
-        if (window.scrollY >= 80) {
-            setNavbar(true);
-        } else {
-            setNavbar(false);
-        }
-    }
-    window.addEventListener('scroll', changeBackground)
 
-    return (
-        <nav className={navbar ? 'navbar acticve' : 'navbar'}>
-            <Link to='/mainpage' 
-            className="navbar-logo">
-                <i class="fas fa-laugh-wink"></i> 
-            </Link>
+//   const [navbar, setNavbar] = useState(false)
+//   css position: sticky를 적용하면 navbar 상단 고정 가능
+//   const changeBackground = () => {
+//       if (window.scrollY >= 80) {
+//           setNavbar(true);
+//         } else {
+//           setNavbar(false);
+//         }
+//     }
+
+    // window.addEventListener('scroll', changeBackground)
+
+  const handleClick = () => setClick(!click);
+>>>>>>> 4494bca704cfabcfa00506f82e4a1dbb02528777
+  return (
+    <>
+      <nav className="navbar">
+        <div className="nav-container">
+          <Link exact to="/" className="nav-logo">
             
-            <ul className = {isMobile ?'navbar-links-mobile' : "navbar-links"}
-            onClick={() => setIsMobile(false)}
-            >
+          <i class="fas fa-laugh-wink"></i>
+          </Link>
 
-            <Link to='/mainpage' className='navbar-mainpage-button'>
-                <li>감정기록</li>
-            </Link>
-
-            <Link to='/list' className='navbar-list-button'>
-                <li>감정 리스트</li>
-            </Link>
-
-            <Link to='/modified' className='navbar-modified-button'>
-                <li>회원 정보 수정</li>
-            </Link>
-
-            <Link to='/landingpage' className='navbar-login-button'>
-                <li>로그인</li>
-            </Link>
-            </ul>
-            <button className='mobile-menu-icon'
-            onClick={() => setIsMobile(!isMobile)}
-            >
-                {isMobile ? (
-                <i className='fas fa-times'></i> 
-                ) : ( 
-                <i className='fas fa-bars'> </i>)}
-            </button>
-        </nav>
-    )
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+<<<<<<< HEAD
+            {isLogin ? (
+              <div>{userInfo.nickName}님 환영합니다</div>
+            ) : (
+              <div>확인작업중</div>
+            )}
+=======
+>>>>>>> 4494bca704cfabcfa00506f82e4a1dbb02528777
+            <li className="nav-item">
+              <Link
+                exact
+                to="/mainpage"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                감정기록
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                exact
+                to="/list"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                감정리스트
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                exact
+                to="/modified"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                회원정보수정
+              </Link>
+            </li>
+<<<<<<< HEAD
+            {isLogin ? (
+              <li className="nav-item">
+                <Link
+                  to="/landingpage"
+                  onClick={handleLogOut}
+                  activeClassName="active"
+                  className="nav-links"
+                  onClick={() => {
+                    handleClick();
+                    handleLogOut();
+                    history.push("/mainpage");
+                  }}
+                >
+                  로그아웃
+                </Link>
+              </li>
+            ) : (
+              <li className="nav-item">
+                <Link
+                  to="/landingpage"
+                  activeClassName="active"
+                  className="nav-links"
+                  onClick={handleClick}
+                >
+                  로그인
+                </Link>
+              </li>
+            )}
+=======
+            <li className="nav-item">
+              <Link
+                exact
+                to="/landingpage"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                로그인
+              </Link>
+            </li>
+>>>>>>> 4494bca704cfabcfa00506f82e4a1dbb02528777
+          </ul>
+          <div className="nav-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
+          </div>
+        </div>
+      </nav>
+    </>
+  );
 }
 export default Navbar;

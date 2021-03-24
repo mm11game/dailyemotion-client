@@ -5,20 +5,20 @@ const validation = (values) => {
   const regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
   
   if(!values.nickName){
-    errors.nickName="Nickname is required."
+    errors.nickName="닉네임을 입력해 주세요."
   }
   if(!values.email){
-    errors.email="Email is required."
+    errors.email="이메일을 입력해 주세요."
   } else if(!regExp.test(values.email)){
-    errors.email="Email is invalid."
+    errors.email="이메일이 유효하지 않습니다."
   }
   if(!values.password){
-    errors.password="Password is required."
+    errors.password="비밀번호를 입력해 주세요."
   } else if(values.password.length < 5){
-    errors.password="Password must be more then five characters."
+    errors.password="비밀번호는 5자리 이상 입력해 주세요."
   }
-  if(!values.confirmPassword){
-    errors.confirmPassword="Confirm your password" 
+  if(values.confirmPassword !== values.password){
+    errors.confirmPassword="비밀번호가 맞지 않습니다"
   } 
 
   // if(values.confirmPassword !== values.password){
