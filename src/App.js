@@ -21,7 +21,7 @@ axios.defaults.withCredentials = true;
 export const AppContext = createContext();
 export const garbageContext = createContext();
 
-function App() {
+function App(props) {
   const [items, setItems] = useState(initialState.items);
   const [deletedItems, setDeletedItems] = useState("");
   const [isLogin, setIsLogin] = useState(false);
@@ -31,17 +31,17 @@ function App() {
 
   // const [editItem, setEditItem] = useState(null)
 
-  useEffect(() => {
-    axios
-      .get("https://localhost:5000/text/textList")
-      .then((res) => {
-        console.log(res.data);
-        setItems(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://localhost:5000/text/textList")
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       setItems(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   // const findItem = itemId => {
   //   const item = items.find(item => item.id === itemId)
@@ -74,7 +74,10 @@ function App() {
           email: res.data.data.email,
           nickName: res.data.data.nickName,
         });
-        history.push("/");
+      })
+      .then(() => {
+        console.log("유저인포의 값은?", userInfo);
+        // history.push("/");
       })
 
       .catch((err) => {
@@ -84,7 +87,7 @@ function App() {
   const handleLogOut = () => {
     console.log("로그아웃버튼작동");
     axios
-      .post("https://localhost:5000/user/signout")
+      .post("https://localhost:5000/user/signout", null)
       .then(() => {
         console.log("로그아웃 axios가 잘작동함");
         setIsLogin(false);

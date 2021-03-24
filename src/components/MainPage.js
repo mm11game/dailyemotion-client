@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Mood from "./Mood";
 import {
   withRouter,
@@ -30,11 +30,12 @@ const MainPage = () => {
     setText(e.target.value);
   };
   //이모지를 클릭하면? 그 객체값을 가져와야한다?
-  const emojisGet = axios.get();
+
   const getEmojiState = (id) => {
     setClickEmoji(id);
     console.log("겟이모지 스테이츠", id);
   };
+
   const handleButtonClick = () => {
     console.log("메인페이지 21번줄", clickEmoji, text);
     //클릭된 즉 이모지상태가 true인것의 id값과 여기 text값을 날려줘야한다.
