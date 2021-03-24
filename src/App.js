@@ -39,8 +39,6 @@ const removeValue = useMemo(() => ({items, removeItem}), [removeItem])
 //   setDeletedItems(items.filter(el => el.id === itemId))
 // }
 
-
-
   return (
     <AppContext.Provider value={removeValue}>
       <Router>
@@ -55,8 +53,8 @@ const removeValue = useMemo(() => ({items, removeItem}), [removeItem])
           <Route path="/modified" component={Modified} />
           <Redirect path="*" to="/login" />
         </Switch>
-        <Footer />
       </Router>
+      <Footer />
     </AppContext.Provider>
   )
 }
