@@ -25,6 +25,10 @@ function App() {
   const [deletedItems, setDeletedItems] = useState("");
   const [isLogin, setIsLogin] = useState(false);
   const [userInfo, setUserInfo] = useState([]);
+<<<<<<< HEAD
+
+=======
+>>>>>>> 4494bca704cfabcfa00506f82e4a1dbb02528777
   const history = useHistory();
   const removeItem = (itemId) => {
     if (items.id !== itemId) {
@@ -98,7 +102,7 @@ function App() {
           <Route path="/list" component={List} />
           <Route path="/delete" component={Delete} />
           <Route path="/modified" component={Modified} />
-          <Redirect path="*" to="/login" />
+          {/* <Redirect path="*" to="/login" /> */}
         </Switch>
         <Footer />
       </Router>

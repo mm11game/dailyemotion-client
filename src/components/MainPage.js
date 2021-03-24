@@ -1,5 +1,13 @@
 import React, { useState } from "react";
 import Mood from "./Mood";
+import {
+  withRouter,
+  Link,
+  Route,
+  BrowserRouter as Router,
+  Switch,
+  useHistory,
+} from "react-router-dom";
 import styles from "../css/MainPage.module.css";
 import { emojis } from "../dummydata/dummy.js";
 
@@ -25,13 +33,14 @@ const MainPage = () => {
 
   const getEmojiState = (id) => {
     setClickEmoji(id);
+    console.log("겟이모지 스테이츠", id);
   };
   const handleButtonClick = () => {
     console.log("메인페이지 21번줄", clickEmoji, text);
     //클릭된 즉 이모지상태가 true인것의 id값과 여기 text값을 날려줘야한다.
     //만약 clickEmoji가 false가 아니고, text가 ""이 아닐때만 포스트를 해준다.
     axios
-      .post("https://test.projectb1.com:5000/text/textRecord", {
+      .post("https://localhost:5000/text/textRecord", {
         textcontent: text,
         emotionId: clickEmoji,
       })
