@@ -16,7 +16,8 @@ function EmailLogin({ error, isLogin, handleResponseSuccess, text }) {
     console.log("로그인상태", isLogin);
 
     axios
-      .post("https://test.projectb1.com:5000/user/login", {
+      // .post("https://test.projectb1.com:5000/user/login", {
+      .post("https://localhost:5000/user/login", {
         email: details.email,
         password: details.password,
       })

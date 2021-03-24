@@ -4,6 +4,7 @@ import {
   Redirect,
   Route,
   Switch,
+  useHistory,
 } from "react-router-dom";
 import EmailSignUp from "./components/EmailSignUp";
 import LandingPage from "./components/LandingPage";
@@ -25,8 +26,9 @@ function App() {
   const [items, setItems] = useState(initialState.items);
   const [deletedItems, setDeletedItems] = useState("");
   const [isLogin, setIsLogin] = useState(false);
-  const [userInfo, setUserInfo] = useState(null);
+  const [userInfo, setUserInfo] = useState([]);
 
+  const history = useHistory();
   const removeItem = (itemId) => {
     if (items.id !== itemId) {
       setItems(items.filter((el) => el.id !== itemId));
@@ -43,30 +45,32 @@ function App() {
   const handleResponseSuccess = () => {
     console.log("로그인버튼작동");
     axios
-      .get("https://test.projectb1.com:5000/user/userInfo")
+      .get("https://localhost:5000/user/")
       .then((res) => {
         setIsLogin(true);
-        console.log(
-          "앱 45번줄, 핸들석세스 aixos get/user 요청 후 오는것",
-          res.data
-        );
-        setUserInfo(res.data);
+        setUserInfo({
+          email: res.data.data.email,
+          nickName: res.data.data.nickName,
+        });
+      })
+      .then(() => {
+        history.push("/mainpage");
       })
       .catch((err) => {
-        alert("실패");
+        alert("여기서 오류가 왜 낫는가?");
       });
   };
   const handleLogOut = () => {
     console.log("로그아웃버튼작동");
     axios
-      .post("https://test.projectb1.com:5000/user/signout")
+      .post("https://localhost:5000/user/signout")
       .then(() => {
         console.log("로그아웃 axios가 잘작동함");
         setIsLogin(false);
         setUserInfo(null);
       })
       .catch((err) => {
-        alert("실패");
+        alert("로그아웃이 실패");
       });
   };
 
@@ -80,7 +84,7 @@ function App() {
           userInfo={userInfo}
         />
         <Switch>
-          <Route exact path="/" component={isLogin ? MainPage : LandingPage} />
+          <Route exact path="/" component={EmailLogin} />
           {/* <Route
             path="/"
             render={() => {
@@ -92,7 +96,6 @@ function App() {
             <EmailLogin
               isLogin={isLogin}
               handleResponseSuccess={handleResponseSuccess}
-              text={text}
             />
           </Route>
           <Route path="/mainpage" component={MainPage} />
@@ -100,7 +103,7 @@ function App() {
           <Route path="/list" component={List} />
           <Route path="/delete" component={Delete} />
           <Route path="/modified" component={Modified} />
-          <Redirect path="*" to="/login" />
+          {/* <Redirect path="*" to="/login" /> */}
         </Switch>
         <Footer />
       </Router>

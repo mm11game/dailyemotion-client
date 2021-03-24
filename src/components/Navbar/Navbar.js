@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./Navbar.css";
 function Navbar({ isLogin, userInfo, handleResponseSuccess, handleLogOut }) {
   const [click, setClick] = useState(false);
@@ -14,7 +14,7 @@ function Navbar({ isLogin, userInfo, handleResponseSuccess, handleLogOut }) {
   //     }
   // window.addEventListener('scroll', changeBackground)
   const handleClick = () => setClick(!click);
-
+  const history = useHistory();
   return (
     <>
       <nav className="navbar">
@@ -24,7 +24,7 @@ function Navbar({ isLogin, userInfo, handleResponseSuccess, handleLogOut }) {
           </Link>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             {isLogin ? (
-              <div>{userInfo}님 환영합니다</div>
+              <div>{userInfo.nickName}님 환영합니다</div>
             ) : (
               <div>확인작업중</div>
             )}
@@ -71,6 +71,7 @@ function Navbar({ isLogin, userInfo, handleResponseSuccess, handleLogOut }) {
                   onClick={() => {
                     handleClick();
                     handleLogOut();
+                    history.push("/mainpage");
                   }}
                 >
                   로그아웃
