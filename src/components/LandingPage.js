@@ -7,6 +7,7 @@ import {
   Route,
   BrowserRouter as Router,
   Switch,
+  useHistory,
 } from "react-router-dom";
 import EmailSignUp from "./EmailSignUp";
 import "../css/LandingPage.css";
@@ -15,7 +16,7 @@ import Slider from "./Slider";
 export default function LandingPage() {
   const [user, setUser] = useState(null);
   const [loading, setLoding] = useState("Loading...");
-
+  const history = useHistory();
   const handleLoginSuccess = (response) => {
     if (response.profileObj) {
       axios
