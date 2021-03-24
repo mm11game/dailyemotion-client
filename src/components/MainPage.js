@@ -42,7 +42,7 @@ const MainPage = () => {
     //만약 clickEmoji가 false가 아니고, text가 ""이 아닐때만 포스트를 해준다.
     axios
       .post("https://localhost:5000/text/textRecord", {
-        textcontent: text,
+        textContent: text,
         emotionId: clickEmoji,
       })
       .then((res) => console.log("받은데이터", res));

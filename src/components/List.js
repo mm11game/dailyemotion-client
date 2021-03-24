@@ -1,18 +1,20 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 
 import styled from "styled-components";
 
 import ListItem from "../components/ListItems";
 import { AppContext, EditContext, garbageContext } from "../App";
 import "../css/List.css";
-
-export default function List() {
+const axios = require("axios");
+axios.defaults.withCredentials = true;
+export default function List({ getItemState }) {
   const { items, removeItem } = useContext(AppContext);
 
   console.log("아이템스", items);
   const handleDeleteAndGoToGarbage = (itemId) => {
     removeItem(itemId);
   };
+  //리스트에서 get을 받아서 그 값을 App으로 올려주고, 그 다음에 setItems로 그걸 받아서 변경
 
   const months = [
     "01",
@@ -30,6 +32,16 @@ export default function List() {
   ];
   const [filter, setFilter] = useState("all");
   const [modalStatus, setModalStatus] = useState(false);
+
+  axios
+    .get("https://localhost:5000/text/textList")
+    .then((res) => {
+      console.log("레절트값이 뭔가?", res.data.data);
+      getItemState(res.data.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
   return (
     <div>
