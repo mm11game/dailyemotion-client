@@ -1,4 +1,4 @@
-import React, { useState, createContext, useMemo } from "react";
+import React, { useState, createContext, useMemo, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Redirect,
@@ -54,7 +54,7 @@ useEffect(() => {
 
 
 
-const removeValue = useMemo(() => ({items, removeItem}), [removeItem])
+
 
 // const deletedItem = (itemId) => {
 //   setDeletedItems(items.filter(el => el.id === itemId))
@@ -69,7 +69,7 @@ const removeValue = useMemo(() => ({items, removeItem}), [removeItem])
       console.log(setDeletedItems(itemId));
     }
   };
-  const removeValue = useMemo(() => ({ items, removeItem }), [removeItem]);
+  // const removeValue = useMemo(() => ({ items, removeItem }), [removeItem]);
   const text = () => {
     setIsLogin(true);
   };
@@ -104,6 +104,7 @@ const removeValue = useMemo(() => ({items, removeItem}), [removeItem])
         alert("로그아웃이 실패");
       });
   };
+  const removeValue = useMemo(() => ({items, removeItem}), [removeItem])
   return (
     <AppContext.Provider value={removeValue}>
       <Router>
