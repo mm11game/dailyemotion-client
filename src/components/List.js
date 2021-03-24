@@ -3,17 +3,19 @@ import React, { useState, useContext } from 'react';
 import styled from "styled-components";
 
 import ListItem from '../components/ListItems';
-import { AppContext, garbageContext } from '../App';
+import { AppContext, EditContext, garbageContext } from '../App';
 import '../css/List.css';
+
 
 export default function List(){
   const {items, removeItem}= useContext(AppContext)
+
 
   const handleDeleteAndGoToGarbage =(itemId) => {
     removeItem(itemId)    
   }
 
-
+  
 
   const months = ["01","02","03","04","05","06","07","08","09","10","11","12"]
 
@@ -40,7 +42,7 @@ export default function List(){
             return item
           }
         })).map((item, key) =>
-            <ListItem key={key} item={item} handleDeleteAndGoToGarbage={handleDeleteAndGoToGarbage}/>)}
+            <ListItem key={key} item={item} handleDeleteAndGoToGarbage={handleDeleteAndGoToGarbage}  />)}
       </ul>
     </div>
   )

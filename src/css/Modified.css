@@ -1,49 +1,32 @@
 * {
   box-sizing: border-box;
 }
-
-.container {
+.body {
   display: flex;
   justify-content: space-around;
-  padding-bottom: 100px;
+  padding: 100px;
 }
 
-.title {
-  font-size: 28px;
-  padding-top: 24px;
-}
-
-/* .form-wrapper {
+/* .box {
   border-radius: 10px;
   border: 1px solid black;
-  width: 550px;
-  height: 600px;
+  width: 450px;
+  height: 550px;
   display: flex;
-  flex-flow: column;
-  justify-content: space-evenly;
-  padding: 16px;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  padding: 20px;
   box-shadow: 0px 0px 5px 1px rgb(130, 130, 130);
 } */
 
-.nickName {
-  font-size: 20px;
-}
-
-.email {
-  font-size: 20px;
-}
-
-.password {
-  font-size: 20px;
-}
-
 .input[type="text"],
+input[type="nickname"],
 input[type="password"] {
   width: 100%;
   padding: 16px;
   margin-top: 12px;
-  margin-bottom: 26px;
-  margin-right: 0px;
+  margin-bottom: 16px;
+  margin-right: 8px;
   margin-left: 0px;
   display: inline-block;
   border: none;
@@ -53,15 +36,17 @@ input[type="password"] {
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-  background-color: #f1f1f1;
+  background-color: #ddd;
   border: #f5b921;
 }
-
-.confirmPassword {
-  margin-top: -10px;
+.h2 {
+  padding-top: 28px;
 }
-
-.btn-singup {
+.nickName {
+  font-size: 20px;
+  margin-left: 0px;
+}
+.button {
   background-color: #f5b921;
   color: white;
   font-size: 18px;
@@ -75,25 +60,27 @@ input[type="password"]:focus {
   border-radius: 8px;
 }
 
-.btn-singup:hover {
-  background-color: #ffc738;
-  transition-duration: 0.5s;
+.input[name="passwordTwo"] {
+  margin-top: -20px;
 }
 
-.error-signup {
+.input[name="changeNickname"] {
+  margin-top: 4px;
+}
+.error-modified {
   color: #ff5946;
   font-size: 12px;
-  margin-top: -10px;
-  margin-bottom: 12px;
+  margin-top: 10px;
+  margin-bottom: 24px;
   margin-right: 2px;
   margin-left: 2px;
 }
 
-/* .test-img {
-  width: 50%;
-  justify-content: space-around;
+.nickName {
+  margin-top: 32px;
 }
 
-.img-left {
-  width: 50%;
-} */
+.passwordmodified {
+  margin-top: 20px;
+  font-size: 20px;
+}

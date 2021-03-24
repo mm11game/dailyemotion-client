@@ -2,13 +2,19 @@
   box-sizing: border-box;
 }
 
-.footer {
-  background: black;
-  height: 80px;
+.footer-container {
+  background-color: black;
+  opacity: 90%;
+  color: white;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.footer-name {
   display: flex;
-  align-items: center;
   justify-content: space-around;
-  font-size: 1rem;
-  margin: 0px;
-  padding: 0px;
+  font-weight: 400;
 }
