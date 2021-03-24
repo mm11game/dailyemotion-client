@@ -30,7 +30,7 @@ const MainPage = () => {
     setText(e.target.value);
   };
   //이모지를 클릭하면? 그 객체값을 가져와야한다?
-
+  const emojisGet = axios.get();
   const getEmojiState = (id) => {
     setClickEmoji(id);
     console.log("겟이모지 스테이츠", id);
