@@ -214,11 +214,7 @@ return (
           placeholder="비밀번호를 다시한번 입력해주세요"
           onChange={handleChange("confirmPassword")}
           />
-<<<<<<< HEAD
-          {errors.confirmPassword  && <p className="error">{errors.confirmPassword}</p>}
-=======
           {errors.confirmPassword && <p className="error-signup">{errors.confirmPassword}</p>}
->>>>>>> 37125e1410f8d20a30eb5774a8ae1ae16231bb00
         </div>
         <div>
           <button className="btn-singup" onClick={handleSignup}>회원가입하기</button>
