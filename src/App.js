@@ -1,4 +1,4 @@
-import React, { useState, createContext, useMemo} from 'react';
+import React, { useState, useEffect, createContext, useMemo} from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import EmailSignUp from './components/EmailSignUp';
 import LandingPage from './components/LandingPage';
@@ -9,18 +9,38 @@ import Modified from './components/Modified';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import Delete from './components/Delete';
-//import axios from 'axios';
+import axios from 'axios';
+
 
 import { initialState } from '../src/assets/state';
 
+axios.defaults.withCredentials = true;
 
 export const AppContext = createContext()
-export const garbageContext = createContext()
+export const EditContext = createContext()
 
 function App() {
 
-const [items, setItems] = useState(initialState.items);
-const [deletedItems, setDeletedItems] = useState("")
+// const [items, setItems] = useState(initialState.items);
+const [items, setItems] = useState([]); // null
+const [deletedItems, setDeletedItems] = useState("");
+
+
+// const [editItem, setEditItem] = useState(null)
+
+useEffect(() => {
+  axios
+    .get("https://localhost:5000/text/textList")
+    .then((res) => {
+      console.log(res.data)
+      setItems(res.data)
+    })
+    .catch(err =>{
+      console.log(err)  
+    })
+})
+
+
 
 const removeItem = (itemId) => {
   if(items.id !== itemId) {
@@ -31,9 +51,15 @@ const removeItem = (itemId) => {
   }
 }
 
+// const findItem = itemId => {
+//   const item = items.find(item => item.id === itemId)
+  
+//   setEditItem(item)
+// }
+
+
 
 const removeValue = useMemo(() => ({items, removeItem}), [removeItem])
-
 
 // const deletedItem = (itemId) => {
 //   setDeletedItems(items.filter(el => el.id === itemId))

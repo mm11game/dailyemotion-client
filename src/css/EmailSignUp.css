@@ -4,3 +4,12 @@
   justify-content: center;
 }
 
+.btn-singup {
+  width: 100px;
+  min-width: 5px;
+  height: 40px;
+  background-color: lightpink;
+  border: lightpink;
+  border-radius: 50px;
+  cursor: pointer;
+}

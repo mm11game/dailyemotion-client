@@ -4,6 +4,7 @@ import axios from 'axios';
 import { withRouter, Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import EmailSignUp from './EmailSignUp';
 import '../css/LandingPage.css'
+import Slider from './Slider'
 
 export default function LandingPage(){
 
@@ -11,12 +12,13 @@ const [user, setUser] = useState(null);
 const [loading, setLoding] = useState('Loading...')
 
 const handleLoginSuccess = response => {
-
+  console.log(response)
   if(response.profileObj){
     axios
     // 이부분 서버랑 확인 (api에 없었음)
       .post('https://projectb1.com/oauth', {
         email: response.profileObj.email,
+        name: response.profileObj.name
       },
       {
         headers: {
@@ -24,6 +26,7 @@ const handleLoginSuccess = response => {
         },
       }
     ).then(res => {
+   
       setUser(response.profileObj)
       setLoding();
     })
@@ -35,9 +38,10 @@ const handleLoginFailure = error => {
 }
 
 return(
-  <container>
-    <h1>감정을 기록하는 간편한 방법</h1>
+  <div className="landing-wrapper">
+    <h1 className="landing-title">감정을 기록하는 간편한 방법</h1>
       <h5>이모지로 오늘 나만의 감정을 솔직하게 기록해보세요.</h5>
+          <Slider />
         <div className="signin-wrapper">
           <div>
             <GoogleLogin
@@ -60,7 +64,7 @@ return(
             <span className="link-signup"><Link to="/signup">회원가입하기</Link></span>
           </div>
         </div>
-  </container>
+  </div>
   )
 };
 

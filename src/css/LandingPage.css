@@ -1,13 +1,12 @@
-h1 {
-  text-align: left;
-  margin-left: 10px;
+
+.landing-title{
+  margin-left: 525px;
 }
 
 h5 {
-  text-align: left;
-  margin-left: 10px;
-  font-weight:normal;
-}
+  margin-left: 550px;
+  font-weight: normal;
+} 
 
 .signin-wrapper {
   text-align: center;
@@ -40,8 +39,10 @@ h5 {
   margin-bottom: 15px;
   width: 400px;
   height: 48px;
+  font-weight: bold;
 }
 
 .btn-google:hover {
   opacity: 1; 
 }
+
