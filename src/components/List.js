@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import ListItem from "../components/ListItems";
 import "../css/List.css";
@@ -24,44 +24,36 @@ export default function List() {
     "12",
   ];
   useEffect(() => {
-    axios.get("https://localhost:5000/text/textList").then((res) => {
+    axios.get("https://test.projectb1.com:5000/text/textList").then((res) => {
       setItems(res.data.data);
+      console.log("텍스트/텍스트리스에서 get해온값", res.data.data);
     });
   }, []);
 
-  const history = useHistory();
-  const [items, setItems] = useState();
-  const [deletedItem, setDeletedItems] = useState("");
-  const [filter, setFilter] = useState("all");
-  const [modalStatus, setModalStatus] = useState(false);
-  console.log("현재아이템스", items);
+  const [items, setItems] = useState([]); //items = []
+  const [filter, setFilter] = useState("all"); //필터에는 월이 들어가게 된다.
+  const [modalStatus, setModalStatus] = useState(false); //이게 true이면 월 목록을 보여준다.
 
   const removeItem = (item) => {
-    console.log("아이템아이디", item.id, item.text_status);
-    if (items.id !== item.id) {
-      setItems(items.filter((el) => el.id !== item.id));
-    }
-    setDeletedItems({ text_id: item.id, text_status: item.text_status });
-    axios
-      .post("https://localhost:5000/text/goToGarbage", {
-        text_id: deletedItem.text_id,
-        text_status: deletedItem.text_status,
-      })
-      .then(() => {
-        console.log("잘됫나?");
-      });
+    setItems(items.filter((el) => el.id !== item.id));
+
+    axios.post("https://test.projectb1.com:5000/text/goToGarbage", {
+      text_id: item.id,
+      text_status: item.text_status,
+    });
   };
+
   const handleDeleteAndGoToGarbage = (itemId) => {
     removeItem(itemId);
   };
-  console.log("지워진거", deletedItem);
 
   return (
-    <div>
-      <h1>감정 기록</h1>
+    <div className="list-box">
+      <h1 className="title">감정 기록 리스트 </h1>
       {/* <div>
         <i class="fas fa-trash" onClick={() => history.push("/delete")}></i>
       </div> */}
+
       <div>
         <i
           class="far fa-calendar-alt"
@@ -71,7 +63,7 @@ export default function List() {
           <ul className="list-months">
             {months.map((month) => (
               <li className="month" onClick={() => setFilter(month)}>
-                {month} 월
+                {month}월
               </li>
             ))}
           </ul>
@@ -79,9 +71,7 @@ export default function List() {
       </div>
       {filter !== "all" && (
         <span>
-          <button className="reset" onClick={() => setFilter("all")}>
-            RESET
-          </button>
+          <i class="fas fa-undo" onClick={() => setFilter("all")}></i>
         </span>
       )}
       <ul id="list">
@@ -104,3 +94,5 @@ export default function List() {
     </div>
   );
 }
+
+//일단 달력의 월의 값과 같은 값이 나온 것만 filter를 사용해서 추려낸다음에 , 그 이후에 map으로 그 list를 뿌려준다.

@@ -33,7 +33,7 @@ const Modified = ({ userInfo }) => {
       setErrMessage("빈칸을 모두 적어주세요.");
     } else if (changeNickname !== "" && password === passwordTwo) {
       axios
-        .post("https://localhost:5000/user/change", {
+        .post("https://test.projectb1.com:5000/user/change", {
           password: password,
           nickName: changeNickname,
         })

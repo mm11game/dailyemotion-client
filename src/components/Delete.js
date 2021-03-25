@@ -13,10 +13,12 @@ const Delete = () => {
   //또한 비우기를 누르면? checkedEmo에 들어간 부분만 db에서 지운다.
   //또한 지우면서 emotion_count를 줄여야한다.
   useEffect(() => {
-    axios.get("https://localhost:5000/text/garbageList").then((res) => {
-      console.log("감정쓰레기통에 들어갈것들", res.data.data);
-      setRenderEmojis(res.data.data);
-    });
+    axios
+      .get("https://test.projectb1.com:5000/text/garbageList")
+      .then((res) => {
+        console.log("감정쓰레기통에 들어갈것들", res.data.data);
+        setRenderEmojis(res.data.data);
+      });
   }, []);
   const handleCheckChange = (checked, id) => {
     if (checked) {
@@ -35,7 +37,7 @@ const Delete = () => {
     setRenderEmojis(rendering);
     console.log("체크된 Emo", checkedEmo);
     //다 하고 나면? checkedEmo를 초기화시킨다
-    axios.post("https://localhost:5000/text/finalDelete", {
+    axios.post("https://test.projectb1.com:5000/text/finalDelete", {
       text_id: checkedEmo,
     });
     //마지막에 checkEmo를 []로 만들어준다

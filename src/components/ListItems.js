@@ -10,14 +10,12 @@ export default function ListItems({ item, handleDeleteAndGoToGarbage }) {
           <img src={RenderImg(item.emotionlist_id)} />
         </div>
         <div className="list-item-info">
-          <button
-            className="btn-delete"
+          <i
+            class="fas fa-trash"
             onClick={() => {
               handleDeleteAndGoToGarbage(item);
             }}
-          >
-            삭제
-          </button>
+          ></i>
           <div className="list-item-text">{item.text_content}</div>
           <span className="list-item-date">{item.date}</span>
         </div>
