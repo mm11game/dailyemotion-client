@@ -19,6 +19,7 @@ export default function LandingPage() {
   const [loading, setLoding] = useState("Loading...");
 
   const history = useHistory()
+  
   const handleLoginSuccess = (response) => {
     if (response.profileObj) {
       axios

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Mood from "./Mood";
 import {
   withRouter,
@@ -8,7 +8,7 @@ import {
   Switch,
   useHistory,
 } from "react-router-dom";
-import styles from "../css/MainPage.module.css";
+import "../css/MainPage.css";
 import { emojis } from "../dummydata/dummy.js";
 import swal from 'sweetalert';
 
@@ -36,13 +36,14 @@ const MainPage = () => {
     setClickEmoji(id);
     console.log("겟이모지 스테이츠", id);
   };
+
   const handleButtonClick = () => {
     console.log("메인페이지 21번줄", clickEmoji, text);
     //클릭된 즉 이모지상태가 true인것의 id값과 여기 text값을 날려줘야한다.
     //만약 clickEmoji가 false가 아니고, text가 ""이 아닐때만 포스트를 해준다.
     axios
       .post("https://localhost:5000/text/textRecord", {
-        textcontent: text,
+        textContent: text,
         emotionId: clickEmoji,
       })
       .then((res) => {
@@ -56,10 +57,10 @@ const MainPage = () => {
   };
 
   return (
-    <div className={styles.body}>
-      <div className={styles.box}>
-        <h3>오늘의 감정을 선택해보세요</h3>
-        <div className={styles.emojis}>
+    <div className="body">
+      <div className="box">
+        <h3 className="title">💖 오늘의 감정은 어떠셨나요?</h3>
+        <div className="emojis">
           {emojis.map((emoji) => (
             <Mood
               key={emoji.id}
@@ -71,14 +72,14 @@ const MainPage = () => {
           ))}
         </div>
         <textarea
-          className={styles.input}
+          className="input-area"
           name="text"
           onChange={handleChange}
           value={text}
-          placeholder="즐겁고 따뜻한 하루였어!"
+          placeholder="오늘 하루의 감정을 글로 남겨 보세요!"
         ></textarea>
         <br></br>
-        <button className={styles.button} onClick={handleButtonClick}>
+        <button className="btn-singup" onClick={handleButtonClick}>
           기록하기
         </button>
       </div>

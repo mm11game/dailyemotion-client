@@ -1,59 +1,71 @@
+.body {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  text-align: center;
+}
+
+#list {
+  display: flex;
+  width: 800px;
+  margin: 0px;
+  padding: 0px;
+  flex-flow: column wrap;
+  align-items: center;
+  text-align: center;
+}
+
 .list-item-body {
+  text-align: left;
+  display: flex;
+  align-items: center;
   padding: 1rem;
-  margin:2rem;
-  width: 100%;
-  height: 170px;
+  margin: 1rem;
+  width: 500px;
+  height: 120x;
   list-style-type: none;
   background: #ffffff;
   border: solid rgb(238, 238, 238) 0.2rem;
-  border-radius: 40px;
+  border-radius: 16px;
   display: flex;
-  max-width: 600px;
-  min-width: 500px;
+}
+.list-item-info {
+  align-items: flex-start;
+}
+.list-item-thumbnail {
+  width: 48px;
+  height: 48px;
 }
 
-
-
-.list-item-body:hover{
-  background-color: rgba(247, 247, 247, 0.836);
-  box-shadow: 5px 5px 5px #3f00c71a;
-}
-
-.list-item-thumbnail{
-  width: 130px;
-  height: 130px;
-}
-
-.list-item-thumbnail img{
-  height:inherit;
-  width:inherit;
+.list-item-thumbnail img {
+  height: inherit;
+  width: inherit;
   object-fit: cover;
   border-radius: 100%;
-  margin-bottom: 30px;
 }
 
 .list-item-text {
-  word-break: normal;
-  color: grey;
-  margin-top: 15px;
+  width: 360px;
+  height: 80px;
+  align-items: flex-start;
 }
 
 .list-item-date {
-  color: grey;
+  width: 360px;
+  text-align: right;
+  display: flex;
+  justify-content: left;
 }
 .btn-delete,
-.btn-edit  {
-  width: 40px;
-  min-width: 5px;
-  height: 40px;
+.btn-edit {
+  width: 48px;
+  height: 48px;
   border-radius: 100%;
   background-color: lightpink;
   border: lightpink;
   margin-left: 380px;
   cursor: pointer;
   position: relative;
-  vertical-align:initial; 
-
+  vertical-align: initial;
 }
-
-
