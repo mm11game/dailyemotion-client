@@ -13,9 +13,10 @@
 }
 
 .emojis {
+  display: flex;
   flex-wrap: wrap;
   padding: 16px;
-
+  justify-content: center;
   margin: 10px;
 }
 
