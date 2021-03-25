@@ -1,0 +1,45 @@
+.list-item-text {
+  list-style: none;
+  max-width: 600px;
+  height: 80px;
+  margin: 8px;
+}
+.list-item-date {
+  text-align: right;
+  margin: 8px;
+}
+.fa-trash {
+  float: right;
+  font-size: 24px;
+  color: black;
+  opacity: 64%;
+  margin-left: 24px;
+  margin: 8px;
+}
+.list-item-thumbnail {
+  width: 48px;
+  height: 48px;
+}
+.list-item-logokiun img {
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.list-item-info {
+  /* border: 1px solid #f5b921; */
+  border: solid rgba(218, 211, 211, 0.884) 0.1rem;
+  border-radius: 8px;
+  width: 400px;
+}
+.list-item-info:hover {
+  /* border: 1px solid #f5b921; */
+  box-shadow: 1px 1px 2px #f5b921;
+}
+.list-item-logokiun {
+  width: 70px;
+  height: 70px;
+  float: left;
+  max-width: 70%;
+  max-height: 70%;
+}

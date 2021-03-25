@@ -1,0 +1,40 @@
+.list-box {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  text-align: center;
+}
+#list {
+  overflow: auto;
+  text-align: left;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: 0px;
+  width: 630px;
+  max-height: 500px;
+  padding: 16px;
+  padding-bottom: 24px;
+}
+.fa-undo {
+  font-size: 48px;
+  color: #f5b921;
+}
+.list-months {
+  display: flex;
+  font-size: 24px;
+  list-style: none;
+  justify-content: space-evenly;
+}
+.reset {
+  width: 55px;
+  background-color: lightskyblue;
+  margin-left: 35px;
+}
+.fa-calendar-alt {
+  font-size: 48px;
+  color: #f5b921;
+}

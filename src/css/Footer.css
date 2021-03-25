@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+.footer-container {
+  background-color: black;
+  opacity: 90%;
+  color: white;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.footer-name {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 400;
+}

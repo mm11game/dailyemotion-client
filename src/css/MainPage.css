@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+.body {
+  display: flex;
+}
+.box {
+  width: 500px;
+  justify-content: space-around;
+}
+.title {
+  text-align: center;
+}
+
+.emojis {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+  justify-content: center;
+  margin: 10px;
+}
+
+.input-area {
+  width: 100%;
+  height: 100px;
+  padding: 16px;
+  margin-top: 12px;
+  margin-bottom: 26px;
+  margin-right: 0px;
+  margin-left: 0px;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+.input-area:focus {
+  background-color: #f9f9f9;
+  border: #f5b921;
+}
