@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../css/Mood.module.css";
+import "../css/Mood.css";
 import RenderImg from "./RenderImg";
 
 const Mood = ({ getEmojiState, emoji }) => {
@@ -16,9 +16,9 @@ const Mood = ({ getEmojiState, emoji }) => {
   //emojiImg === Icons의 Img가 같으면 Icons의 이미지를 출력한다
 
   return (
-    <button className={styles.boxNo} onClick={handleClick} id={emoji.id}>
+    <button className="boxNo" onClick={handleClick} id={emoji.id}>
       <img
-        className={styles.emojiImg}
+        className="emojiImg"
         src={RenderImg(emoji.emotion_image)}
       ></img>
       <br></br>
