@@ -25,7 +25,7 @@ const DeleteItems = ({ emoji, handleCheckChange, checkedEmo }) => {
         <div>
           <img
             className={styles.emojiImg}
-            src={RenderImg(emoji.emotionId)}
+            src={RenderImg(emoji.emotionlist_id)}
           ></img>
         </div>
       </div>

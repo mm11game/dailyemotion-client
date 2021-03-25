@@ -17,8 +17,8 @@ const validation = (values) => {
   } else if(values.password.length < 5){
     errors.password="비밀번호는 5자리 이상 입력해 주세요."
   }
-  if(values.confirmPassword !== values.password){
-    errors.confirmPassword="비밀번호가 맞지 않습니다"
+  if(!values.confirmPassword){
+    errors.confirmPassword="비밀번호를 확인해 주세요."
   } 
 
   // if(values.confirmPassword !== values.password){
