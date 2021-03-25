@@ -154,80 +154,13 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Delete from "./components/Delete";
 import axios from "axios";
-import { initialState } from "../src/assets/state";
 
 axios.defaults.withCredentials = true;
 
 function App() {
-  const [items, setItems] = useState(initialState.items);
-  const [deletedItems, setDeletedItems] = useState("");
   const [isLogin, setIsLogin] = useState(false);
   const [userInfo, setUserInfo] = useState([]);
   const history = useHistory();
-
-  // const [record, ] = useState("")
-  // const
-
-  // const [items, setItems] = useState(initialState.items);
-
-  // useEffect(()=> {
-  //   axios.get("https://localhost:5000/text/textList")
-
-  // })
-
-  // const [editItem, setEditItem] = useState(null)
-
-  // useEffect(() => {
-  //   axios
-  //     .get("https://localhost:5000/text/textList")
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       setItems(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
-
-  // const findItem = itemId => {
-  //   const item = items.find(item => item.id === itemId)
-
-  //   setEditItem(item)
-  // }
-
-  // const [editItem, setEditItem] = useState(null)
-
-  // useEffect(() => {
-  //   axios
-  //     .get("https://localhost:5000/text/textList")
-  //     .then((res) => {
-  //       console.log("유즈이펙트로 가져온값", res.data.data);
-  //       setItems(res.data.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
-
-  // const findItem = itemId => {
-  //   const item = items.find(item => item.id === itemId)
-
-  //   setEditItem(item)
-  // }
-
-  // const deletedItem = (itemId) => {
-  //   setDeletedItems(items.filter(el => el.id === itemId))
-  // }
-
-  // const removeItem = (itemId) => {
-  //   if (items.id !== itemId) {
-  //     setItems(items.filter((el) => el.id !== itemId));
-  //   } else {
-  //     setDeletedItems(items.map((el) => el.id === itemId));
-  //     console.log(setDeletedItems(itemId));
-  //   }
-  // };
-  // const removeValue = useMemo(() => ({ items, removeItem }), [removeItem]);
 
   const handleResponseSuccess = () => {
     console.log("핸들리스폰스석세스가 작동함");
