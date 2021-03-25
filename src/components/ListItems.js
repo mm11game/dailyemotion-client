@@ -17,7 +17,7 @@ export default function ListItems({ item, handleDeleteAndGoToGarbage }) {
 
             {/* <button className="btn-delete" onClick={() => { handleDelete(item.id) }}>삭제</button> */}
             {/* <button className="btn-edit">편집</button> */}
-    </li>
+        </li>
     )
 }
 

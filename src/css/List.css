@@ -39,3 +39,8 @@
   font-size: xx-large;
   color: rgb(230, 146, 174);
 }
+
+.fa-trash {
+  font-size: 4rem;
+  margin-left: 40%;
+}

@@ -110,6 +110,7 @@ import validation from './validation'
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import '../css/EmailSignUp.css'
+import swal from 'sweetalert';
 
 axios.defaults.withCredentials = true;
 
@@ -140,7 +141,7 @@ const handleSignup = (e) => {
   const { nickName, email, password, confirmPassword } = values;
 
   if(!email || !password || !nickName || !confirmPassword ) {
-    return alert("모든 항목은 필수입니다.")
+    return swal ( "Oops" ,  "모든 항목은 필수입니다." ,  "error")
   }
 
   const res = 

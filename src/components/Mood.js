@@ -9,6 +9,7 @@ const Mood = ({ getEmojiState, emoji }) => {
   const handleClick = (e) => {
     // setClicked(!clicked);
     e.preventDefault();
+    console.log('event:', e)
     getEmojiState(e.target.id);
     console.log("타겟의 아이디", e.target.id);
   };

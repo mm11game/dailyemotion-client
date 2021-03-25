@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import styles from "../css/MainPage.module.css";
 import { emojis } from "../dummydata/dummy.js";
+import swal from 'sweetalert';
 
 // emojis = {
 //   [
@@ -44,7 +45,14 @@ const MainPage = () => {
         textcontent: text,
         emotionId: clickEmoji,
       })
-      .then((res) => console.log("받은데이터", res));
+      .then((res) => {
+      console.log("받은데이터", res);
+       swal({
+         title: "Good job!",
+         text: "당신의 하루가 기록되었습니다.",
+         icon: "success",
+       }); 
+    })
   };
 
   return (
