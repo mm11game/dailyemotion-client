@@ -7,28 +7,27 @@ import {
   Route,
   BrowserRouter as Router,
   Switch,
-  useHistory
+  useHistory,
 } from "react-router-dom";
 import EmailSignUp from "./EmailSignUp";
 import "../css/LandingPage.css";
 import Slider from "./Slider";
 
 export default function LandingPage() {
-
   const [user, setUser] = useState(null);
   const [loading, setLoding] = useState("Loading...");
 
-  const history = useHistory()
-  
+  const history = useHistory();
+
   const handleLoginSuccess = (response) => {
     if (response.profileObj) {
       axios
         // 이부분 서버랑 확인 (api에 없었음)
         .post(
-          "https://projectb1.com/oauth",
+          "https://test.projectb1.com:5000/user/oauth",
           {
             email: response.profileObj.email,
-            name: response.profileObj.name
+            name: response.profileObj.name,
           },
           {
             headers: {
@@ -38,7 +37,7 @@ export default function LandingPage() {
         )
         .then((res) => {
           setUser(response.profileObj);
-          history.push('/mainpage')
+          history.push("/mainpage");
           setLoding();
         });
     }
@@ -76,7 +75,7 @@ export default function LandingPage() {
             <Link to="/signup"> 👉 회원가입하기</Link>
           </span>
         </div>
-      </div>      
+      </div>
     </container>
   );
 }

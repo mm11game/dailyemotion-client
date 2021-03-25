@@ -47,7 +47,9 @@ function Navbar({ isLogin, userInfo, handleResponseSuccess, handleLogOut }) {
                     to="/list"
                     activeClassName="active"
                     className="nav-links"
-                    onClick={handleClick}
+                    onClick={() => {
+                      handleClick();
+                    }}
                   >
                     감정리스트
                   </Link>
