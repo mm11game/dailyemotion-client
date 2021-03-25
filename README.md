@@ -1,10 +1,9 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Daily Emotion 
+하루의 감정을 이모지로 기록할 수 있는 서비스입니다.
+이모지와 함께 오늘의 감정을 기록해보세요.
 
 ## Available Scripts
-
-In the project directory, you can run:
+In the project directory, you can run: "htt
 
 ### `npm start`
 
