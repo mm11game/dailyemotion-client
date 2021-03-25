@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { emojis } from "../dummydata/deleteDummy.js"; //이 부분을 API로 불러와야한다.
 import DeleteItems from "./DeleteItems.js";
 import styles from "../css/Delete.module.css";
@@ -8,11 +8,16 @@ const axios = require("axios");
 axios.defaults.withCredentials = true;
 
 const Delete = () => {
-  const [RenderEmojis, setRenderEmojis] = useState(emojis); //랜던하는것은 emotion_count가 0을 초과하는것만 보여준다.
+  const [RenderEmojis, setRenderEmojis] = useState([]); //랜던하는것은 emotion_count가 0을 초과하는것만 보여준다.
   const [checkedEmo, setCheckedEmo] = useState([]); //이 부분은 api로 가져온 값을 배열로해서 넣어줘야할 거 같다. 얘 모양은 [2,3,5] 이런식이다.
   //또한 비우기를 누르면? checkedEmo에 들어간 부분만 db에서 지운다.
   //또한 지우면서 emotion_count를 줄여야한다.
-
+  useEffect(() => {
+    axios.get("https://localhost:5000/text/garbageList").then((res) => {
+      console.log("감정쓰레기통에 들어갈것들", res.data.data);
+      setRenderEmojis(res.data.data);
+    });
+  }, []);
   const handleCheckChange = (checked, id) => {
     if (checked) {
       setCheckedEmo([...checkedEmo, id]);

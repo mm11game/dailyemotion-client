@@ -1,6 +1,5 @@
-
 export const initialState = {
-  "items": [
+  items: [
     {
       "id": 1,
       "text_content": "살고 싶어요",
@@ -25,6 +24,5 @@ export const initialState = {
       "user_email": "tjdgml2131@gmail.com",
       "date": "2021-04-12"
     },
-
-  ]
-}
+  ],
+};
