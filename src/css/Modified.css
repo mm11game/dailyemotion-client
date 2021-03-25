@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+.body {
+  display: flex;
+  justify-content: space-around;
+  /* padding: 100px; */
+}
+
+/* .box {
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 450px;
+  height: 550px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  padding: 20px;
+  box-shadow: 0px 0px 5px 1px rgb(130, 130, 130);
+} */
+
+.input[type="text"],
+input[type="nickname"],
+input[type="password"] {
+  width: 100%;
+  padding: 16px;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  margin-right: 8px;
+  margin-left: 0px;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  border: #f5b921;
+}
+.h2 {
+  padding-top: 28px;
+}
+.nickName {
+  font-size: 20px;
+  margin-left: 0px;
+}
+.button {
+  background-color: #f5b921;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 8px;
+}
+
+.input[name="passwordTwo"] {
+  margin-top: -20px;
+}
+
+.input[name="changeNickname"] {
+  margin-top: 4px;
+}
+.error-modified {
+  color: #ff5946;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 24px;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.nickName {
+  margin-top: 32px;
+}
+
+.passwordmodified {
+  margin-top: 20px;
+  font-size: 20px;
+}

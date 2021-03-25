@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.fa-trash {
+  font-size: 4rem;
+  margin-left: 40%;
+}

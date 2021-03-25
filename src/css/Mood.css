@@ -1,0 +1,27 @@
+.boxNo {
+  border-radius: 10px;
+  margin: 10px 16px;
+  width: 120px;
+  height: 100px;
+  list-style: none;
+  border: 2px solid rgb(171, 171, 171);
+  overflow: auto;
+  background-color: transparent;
+  justify-content: space-around;
+}
+
+.boxNo:focus {
+  border: 2px #f5b921;
+}
+
+.boxNo:hover {
+  border-radius: 36px;
+  transition-duration: 0.5s;
+}
+
+.emojiImg {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: cover;
+  border-radius: 100%;
+}
