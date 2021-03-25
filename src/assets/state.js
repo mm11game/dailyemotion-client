@@ -3,7 +3,7 @@ export const initialState = {
   "items": [
     {
       "id": 1,
-      "text_content": "안녕하세요 안녕하세요 안녕하세요안녕하세요 안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요",
+      "text_content": "살고 싶어요",
       "emotionlist_id": 2,
       "text_status": "0",
       "user_email": "tjdgml2131@gmail.com",
@@ -11,7 +11,7 @@ export const initialState = {
     },
     {
       "id": 2,
-      "text_content": "안녕하세요 안녕하세요 안녕하세요안녕하세요 안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요",
+      "text_content": "잘 하고 싶어요",
       "emotionlist_id": 3,
       "text_status": "0",
       "user_email": "tjdgml2131@gmail.com",
@@ -19,7 +19,7 @@ export const initialState = {
     },
     {
       "id": 3,
-      "text_content": "안녕하세요 안녕하세요 안녕하세요안녕하세요 안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요",
+      "text_content": "CSS는 정말 정말 재밌어요 :)",
       "emotionlist_id": 6,
       "text_status": "0",
       "user_email": "tjdgml2131@gmail.com",

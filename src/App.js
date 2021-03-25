@@ -6,6 +6,7 @@ import {
   Switch,
   useHistory,
 } from "react-router-dom";
+import Modal from "./components/Modal";
 import EmailSignUp from "./components/EmailSignUp";
 import LandingPage from "./components/LandingPage";
 import List from "./components/List";
@@ -17,6 +18,7 @@ import Footer from "./components/Footer";
 import Delete from "./components/Delete";
 import axios from "axios";
 import { initialState } from "../src/assets/state";
+// import { Modal } from 'bootstrap';
 axios.defaults.withCredentials = true;
 export const AppContext = createContext();
 export const garbageContext = createContext();
@@ -136,6 +138,7 @@ useEffect(() => {
           <Route path="/modified" component={Modified} />
           {/* <Redirect path="*" to="/login" /> */}
         </Switch>
+        <Modal />
         <Footer />
       </Router>
     </AppContext.Provider>

@@ -35,7 +35,7 @@ function EmailLogin({ error, isLogin, handleResponseSuccess, text }) {
     <div className="container">
       <div className="app-wrapper">
       <div>
-        <h2 className="title"> 💖 이메일로 시작하고 감정을 쉽게 기록해 보세요.</h2>
+        <h2 className="title"> 💖 이메일로 서비스를 시작해 보세요.</h2>
       </div>
       <form onSubmit={submitHandler}>
         <div className="email-form"> 📧 이메일

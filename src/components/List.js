@@ -24,13 +24,21 @@ export default function List(){
   const [modalStatus, setModalStatus] = useState(false);
 
   return (
-    <div>
-      <h1>감정 기록</h1>
+    <div className="box">
+    {/* <div className="app-wrapper"></div> */}
+      <div>
+        <h2 className="title"> 💖 기록한 감정을 확인해 보세요.</h2>
+      </div>
+      <form className="form-wrapper"></form>
       <div >
-        <i class="far fa-calendar-alt"  onClick={() => setModalStatus(!modalStatus)}></i>
+        <i class="far fa-calendar-alt"  
+        onClick={() => setModalStatus(!modalStatus)}>   
+        </i>
         {/* <button className="btn-month" onClick={() => setModalStatus(!modalStatus)}>월간</button> */}
-        {modalStatus && <ul className='list-months'>
-         {months.map(month => <li className="month" onClick={() => setFilter(month)}>{month} 월</li>)}
+        {modalStatus && 
+        <ul className='list-months'>
+         {months.map(month => 
+         <li className="month" onClick={() => setFilter(month)}>{month} 월</li>)}
         </ul>}
       </div>
       {filter !== 'all' && <span><button className="reset" onClick={() => setFilter('all')}>RESET</button></span>}

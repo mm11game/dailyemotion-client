@@ -71,7 +71,7 @@ export default function LandingPage() {
           </span>
         </div>
       </div>
-      <div>
+      {/* <div>
         <Link to="/emaillogin">
           <button className="btn-signin-e">이메일로 시작하기</button>
         </Link>
@@ -82,7 +82,7 @@ export default function LandingPage() {
         <span className="link-signup">
           <Link to="/signup">회원가입하기</Link>
         </span>
-      </div>
+      </div> */}
     </container>
   );
 }

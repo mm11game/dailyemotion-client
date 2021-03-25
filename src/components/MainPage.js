@@ -8,7 +8,7 @@ import {
   Switch,
   useHistory,
 } from "react-router-dom";
-import styles from "../css/MainPage.module.css";
+import "../css/MainPage.css";
 import { emojis } from "../dummydata/dummy.js";
 
 // emojis = {
@@ -48,10 +48,10 @@ const MainPage = () => {
   };
 
   return (
-    <div className={styles.body}>
-      <div className={styles.box}>
-        <h3>오늘의 감정을 선택해보세요</h3>
-        <div className={styles.emojis}>
+    <div className="body">
+      <div className="box">
+        <h3 className="title">💖 오늘의 감정은 어떠셨나요?</h3>
+        <div className="emojis">
           {emojis.map((emoji) => (
             <Mood
               key={emoji.id}
@@ -63,14 +63,14 @@ const MainPage = () => {
           ))}
         </div>
         <textarea
-          className={styles.input}
+          className="input-area"
           name="text"
           onChange={handleChange}
           value={text}
-          placeholder="즐겁고 따뜻한 하루였어!"
+          placeholder="오늘 하루의 감정을 글로 남겨 보세요!"
         ></textarea>
         <br></br>
-        <button className={styles.button} onClick={handleButtonClick}>
+        <button className="btn-singup" onClick={handleButtonClick}>
           기록하기
         </button>
       </div>
