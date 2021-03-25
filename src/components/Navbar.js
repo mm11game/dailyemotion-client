@@ -27,42 +27,42 @@ function Navbar({ isLogin, userInfo, handleResponseSuccess, handleLogOut }) {
           </Link>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link
-                exact
-                to="/mainpage"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                감정기록
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                exact
-                to="/list"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                감정리스트
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                exact
-                to="/delete"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                휴지통
-              </Link>
-            </li>
-
             {isLogin ? (
               <>
+                {" "}
+                <li className="nav-item">
+                  <Link
+                    exact
+                    to="/mainpage"
+                    activeClassName="active"
+                    className="nav-links"
+                    onClick={handleClick}
+                  >
+                    감정기록
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    exact
+                    to="/list"
+                    activeClassName="active"
+                    className="nav-links"
+                    onClick={handleClick}
+                  >
+                    감정리스트
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    exact
+                    to="/delete"
+                    activeClassName="active"
+                    className="nav-links"
+                    onClick={handleClick}
+                  >
+                    휴지통
+                  </Link>
+                </li>
                 <li className="nav-item">
                   <Link
                     exact

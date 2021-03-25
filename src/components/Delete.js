@@ -43,7 +43,7 @@ const Delete = () => {
   };
   const handleAllCheck = (checked) => {
     if (checked) {
-      setCheckedEmo(emojis.map((emoji) => emoji.id));
+      setCheckedEmo(RenderEmojis.map((emoji) => emoji.id));
     } else {
       setCheckedEmo([]);
     }
@@ -61,7 +61,7 @@ const Delete = () => {
               onChange={(e) => {
                 handleAllCheck(e.target.checked);
               }}
-              checked={checkedEmo.length === emojis.length ? true : false}
+              checked={checkedEmo.length === RenderEmojis.length ? true : false}
             ></input>
             <label for="check">전체선택</label>
           </div>

@@ -26,10 +26,7 @@
 //   const [isLogin, setIsLogin] = useState(false);
 //   const [userInfo, setUserInfo] = useState([]);
 
-  
-
 // // const [items, setItems] = useState(initialState.items);
-
 
 // // const [editItem, setEditItem] = useState(null)
 
@@ -41,22 +38,15 @@
 //       setItems(res.data)
 //     })
 //     .catch(err =>{
-//       console.log(err)  
+//       console.log(err)
 //     })
 // })
 
-
-
-
 // // const findItem = itemId => {
 // //   const item = items.find(item => item.id === itemId)
-  
+
 // //   setEditItem(item)
 // // }
-
-
-
-
 
 // // const deletedItem = (itemId) => {
 // //   setDeletedItems(items.filter(el => el.id === itemId))
@@ -145,9 +135,6 @@
 // }
 // export default App;
 
-
-
-
 import React, { useState, useMemo, useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -169,9 +156,7 @@ import Delete from "./components/Delete";
 import axios from "axios";
 import { initialState } from "../src/assets/state";
 
-
 axios.defaults.withCredentials = true;
-
 
 function App() {
   const [items, setItems] = useState(initialState.items);
@@ -181,39 +166,34 @@ function App() {
   const history = useHistory();
 
   // const [record, ] = useState("")
-  // const 
+  // const
 
-// const [items, setItems] = useState(initialState.items);
+  // const [items, setItems] = useState(initialState.items);
 
+  // useEffect(()=> {
+  //   axios.get("https://localhost:5000/text/textList")
 
+  // })
 
-// useEffect(()=> {
-//   axios.get("https://localhost:5000/text/textList")
+  // const [editItem, setEditItem] = useState(null)
 
-// })
+  // useEffect(() => {
+  //   axios
+  //     .get("https://localhost:5000/text/textList")
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       setItems(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
+  // const findItem = itemId => {
+  //   const item = items.find(item => item.id === itemId)
 
-
-// const [editItem, setEditItem] = useState(null)
-
-useEffect(() => {
-  axios
-    .get("https://localhost:5000/text/textList")
-    .then((res) => {
-      console.log(res.data)
-      setItems(res.data)
-    })
-    .catch(err =>{
-      console.log(err)  
-    })
-})
-
-
-// const findItem = itemId => {
-//   const item = items.find(item => item.id === itemId)
-  
-//   setEditItem(item)
-// }
+  //   setEditItem(item)
+  // }
 
   // const [editItem, setEditItem] = useState(null)
 
@@ -239,14 +219,14 @@ useEffect(() => {
   //   setDeletedItems(items.filter(el => el.id === itemId))
   // }
 
-  const removeItem = (itemId) => {
-    if (items.id !== itemId) {
-      setItems(items.filter((el) => el.id !== itemId));
-    } else {
-      setDeletedItems(items.map((el) => el.id === itemId));
-      console.log(setDeletedItems(itemId));
-    }
-  };
+  // const removeItem = (itemId) => {
+  //   if (items.id !== itemId) {
+  //     setItems(items.filter((el) => el.id !== itemId));
+  //   } else {
+  //     setDeletedItems(items.map((el) => el.id === itemId));
+  //     console.log(setDeletedItems(itemId));
+  //   }
+  // };
   // const removeValue = useMemo(() => ({ items, removeItem }), [removeItem]);
 
   const handleResponseSuccess = () => {
@@ -284,43 +264,43 @@ useEffect(() => {
   };
 
   return (
-  
-      <Router>
-        <Navbar
-          handleResponseSuccess={handleResponseSuccess}
-          handleLogOut={handleLogOut}
-          isLogin={isLogin}
-          userInfo={userInfo}
-        />
-        <Switch>
-          {/* <Route
-            path="/"
-            render={() => {
-              isLogin ? <Redirect to="/mainpage" /> : <Redirect to="/login" />;
-            }}
-          /> */}
-          <Route exact path="/login" component={LandingPage} />
-          <Route exact path="/signup" component={EmailSignUp} />
-          <Route exact path="/emaillogin">
-            <EmailLogin
-              isLogin={isLogin}
-              handleResponseSuccess={handleResponseSuccess}
-            />
-          </Route>
-          <Route path="/mainpage" component={MainPage} />
-          <Route path="/login" component={LandingPage} />
-          <Route path="/list">
-            <List 
-              items={items}
-              removeItem={removeItem} />
-          </Route>
-          <Route path="/delete" component={Delete} />
-          <Route path="/modified" component={Modified} />
-          {/* <Redirect path="*" to="/login" /> */}
-        </Switch>
-        <Modal />
-        <Footer />
-      </Router>
+    <Router>
+      <Navbar
+        handleResponseSuccess={handleResponseSuccess}
+        handleLogOut={handleLogOut}
+        isLogin={isLogin}
+        userInfo={userInfo}
+      />
+      <Switch>
+        {/* <Route
+          path="/"
+          render={() => {
+            isLogin ? <Redirect to="/mainpage" /> : <Redirect to="/login" />;
+          }}
+        /> */}
+
+        <Route exact path="/login" component={LandingPage} />
+        <Route exact path="/signup" component={EmailSignUp} />
+        <Route exact path="/emaillogin">
+          <EmailLogin
+            isLogin={isLogin}
+            handleResponseSuccess={handleResponseSuccess}
+          />
+        </Route>
+        <Route path="/mainpage" component={MainPage} />
+        <Route path="/login" component={LandingPage} />
+        <Route path="/list">
+          <List />
+        </Route>
+        <Route path="/delete" component={Delete} />
+        <Route path="/modified">
+          <Modified userInfo={userInfo} />
+        </Route>
+        <Redirect path="*" to="/login" />
+      </Switch>
+      <Modal />
+      <Footer />
+    </Router>
   );
 }
 export default App;
