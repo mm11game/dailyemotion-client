@@ -1,5 +1,6 @@
 # About Daily Emotion 
-<img width="1343" alt="about DE" src="https://user-images.githubusercontent.com/40348689/112491723-eaa8c400-8dc3-11eb-8353-8ee9b77bdb6f.png">
+<img width="1337" alt="about DE" src="https://user-images.githubusercontent.com/40348689/112494278-3ceae480-8dc6-11eb-96af-cabdbb698922.png">
+
 
 
 
