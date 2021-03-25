@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, withRouter, useHistory } from "react-router-dom";
 // import validation from './Validation'
-import "./EmailLogin.css";
+import "../css/EmailLogin.css";
 import axios from "axios";
 axios.defaults.withCredentials = true;
 

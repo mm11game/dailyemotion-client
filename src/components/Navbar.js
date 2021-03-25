@@ -49,6 +49,17 @@ function Navbar({ isLogin, userInfo, handleResponseSuccess, handleLogOut }) {
                 감정리스트
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                exact
+                to="/delete"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                휴지통
+              </Link>
+            </li>
 
             {isLogin ? (
               <>
