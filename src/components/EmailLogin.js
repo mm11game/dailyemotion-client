@@ -16,7 +16,7 @@ function EmailLogin({ error, isLogin, handleResponseSuccess, text }) {
     console.log("로그인상태", isLogin);
 
     axios
-      .post("https://localhost:5000/user/login", {
+      .post("https://test.projectb1.com:5000/user/login", {
         email: details.email,
         password: details.password,
       })
@@ -33,35 +33,10 @@ function EmailLogin({ error, isLogin, handleResponseSuccess, text }) {
   return (
     <div className="container">
       <div className="app-wrapper">
-      <div>
-        <h2 className="title"> 💖 이메일로 서비스를 시작해 보세요.</h2>
-      </div>
-      <form onSubmit={submitHandler}>
-        <div className="email-form"> 📧 이메일
-          <input className="input" 
-          type="text" 
-          name="email" 
-          id="email" 
-          placeholder="이메일을 입력해주세요"
-          onChange={e => setDetails({...details, email: e.target.value})}
-          />
-          {/* {( error != "") ? (<div className="error"></div>) : "" } */}
-        </div>
-        <div className="password-form"> 🔐 비밀번호
-          <input className="input" 
-          type="text" 
-          name="email" 
-          id="email" 
-          placeholder="비밀번호를 입력해주세요"
-          onChange={e => setDetails({...details, password: e.target.value})}
-          />  
-          </div>
         <div>
-          <h2 className="title">
-            {" "}
-            💖 이메일로 시작하고 감정을 쉽게 기록해 보세요.
-          </h2>
+          <h2 className="title"> 💖 이메일로 서비스를 시작해 보세요.</h2>
         </div>
+
         <form onSubmit={submitHandler}>
           <div className="email-form">
             {" "}

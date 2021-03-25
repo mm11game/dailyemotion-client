@@ -4,18 +4,30 @@
   width: 100vw;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
 }
-
 .modal-content-wrapper {
   position: fixed;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 500px;
   background: white;
+  border-radius: 16px;
   margin: auto;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 50px;
+}
+h3 {
+  font-weight: 400;
+  text-align: center;
+}
+.modal-title {
+  margin-top: 12px;
+  padding-top: 12px;
+  text-align: center;
+}
+.touch {
+  text-align: center;
 }

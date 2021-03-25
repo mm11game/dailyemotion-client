@@ -3,24 +3,19 @@
 }
 .body {
   display: flex;
-  /* justify-content: space-around; */
 }
 .box {
   width: 500px;
   justify-content: space-around;
 }
 .title {
-  /* padding: 100px; */
   text-align: center;
 }
 
 .emojis {
-  /* display: flex; */
-  /* flex-flow: row wrap; */
-  /* justify-content: center; */
   flex-wrap: wrap;
   padding: 16px;
-  /* overflow: auto; */
+
   margin: 10px;
 }
 

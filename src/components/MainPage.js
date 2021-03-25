@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import "../css/MainPage.css";
 import { emojis } from "../dummydata/dummy.js";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 // emojis = {
 //   [
@@ -35,6 +35,7 @@ const MainPage = () => {
   const getEmojiState = (id) => {
     setClickEmoji(id);
     console.log("겟이모지 스테이츠", id);
+    console.log("클릭된 이모지", clickEmoji);
   };
 
   const handleButtonClick = () => {
@@ -42,18 +43,19 @@ const MainPage = () => {
     //클릭된 즉 이모지상태가 true인것의 id값과 여기 text값을 날려줘야한다.
     //만약 clickEmoji가 false가 아니고, text가 ""이 아닐때만 포스트를 해준다.
     axios
-      .post("https://localhost:5000/text/textRecord", {
+      .post("https://test.projectb1.com:5000/text/textRecord", {
         textContent: text,
         emotionId: clickEmoji,
       })
       .then((res) => {
-      console.log("받은데이터", res);
-       swal({
-         title: "Good job!",
-         text: "당신의 하루가 기록되었습니다.",
-         icon: "success",
-       }); 
-    })
+        console.log("받은데이터", res);
+        swal({
+          title: "Good job!",
+          text: "당신의 하루가 기록되었습니다.",
+          icon: "success",
+        });
+        setText("");
+      });
   };
 
   return (
