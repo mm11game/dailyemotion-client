@@ -212,7 +212,7 @@ function App() {
           }}
         /> */}
 
-        <Route exact path="/login" component={LandingPage} />
+        {/* <Route exact path="/login" component={LandingPage} /> */}
         <Route exact path="/signup" component={EmailSignUp} />
         <Route exact path="/emaillogin">
           <EmailLogin
@@ -221,7 +221,12 @@ function App() {
           />
         </Route>
         <Route path="/mainpage" component={MainPage} />
-        <Route path="/login" component={LandingPage} />
+        <Route path="/login">
+          <LandingPage
+            isLogin={isLogin}
+            handleResponseSuccess={handleResponseSuccess}
+          />
+        </Route>
         <Route path="/list">
           <List />
         </Route>

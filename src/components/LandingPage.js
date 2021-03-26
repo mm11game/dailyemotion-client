@@ -13,7 +13,7 @@ import EmailSignUp from "./EmailSignUp";
 import "../css/LandingPage.css";
 import Slider from "./Slider";
 
-export default function LandingPage() {
+export default function LandingPage({ isLogin, handleResponseSuccess }) {
   const [user, setUser] = useState(null);
   const [loading, setLoding] = useState("Loading...");
 
@@ -24,7 +24,7 @@ export default function LandingPage() {
       axios
         // 이부분 서버랑 확인 (api에 없었음)
         .post(
-          "https://test.projectb1.com:5000/user/oauth",
+          "https://localhost:5000/oauth",
           {
             email: response.profileObj.email,
             name: response.profileObj.name,
@@ -38,7 +38,7 @@ export default function LandingPage() {
         .then((res) => {
           setUser(response.profileObj);
           history.push("/mainpage");
-          setLoding();
+          handleResponseSuccess();
         });
     }
   };
