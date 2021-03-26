@@ -30,7 +30,7 @@ export default function EmailSignUp() {
     // const res =
     axios
       .post(
-        "https://test.projectb1.com:5000/user/signup",
+        "https://localhost:5000/user/signup",
         {
           nickName,
           email,

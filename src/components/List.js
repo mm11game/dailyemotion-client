@@ -24,7 +24,7 @@ export default function List() {
     "12",
   ];
   useEffect(() => {
-    axios.get("https://test.projectb1.com:5000/text/textList").then((res) => {
+    axios.get("https://localhost:5000/text/textList").then((res) => {
       setItems(res.data.data);
       console.log("텍스트/텍스트리스에서 get해온값", res.data.data);
     });
@@ -37,7 +37,7 @@ export default function List() {
   const removeItem = (item) => {
     setItems(items.filter((el) => el.id !== item.id));
 
-    axios.post("https://test.projectb1.com:5000/text/goToGarbage", {
+    axios.post("https://localhost:5000/text/goToGarbage", {
       text_id: item.id,
       text_status: item.text_status,
     });

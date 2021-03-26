@@ -20,7 +20,7 @@ function Navbar({ isLogin, userInfo, handleResponseSuccess, handleLogOut }) {
   const handleClick = () => setClick(!click);
   return (
     <>
-      <nav className="navbar">
+      <nav className="navbar-1">
         <div className="nav-container">
           <Link exact to="/" className="nav-logo">
             <i class="fas fa-laugh-wink"></i>
